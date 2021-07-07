@@ -15,5 +15,6 @@ func Setup(app *fiber.App) {
 	app.Post("/api/getquestion", controllers.Getquestion)
 	app.Post("/api/newanswer", controllers.Newanswer)
 	app.Get("/api/getquestions", controllers.Getquestions)
+	app.Get("/api/test", controllers.Test)
 
 }

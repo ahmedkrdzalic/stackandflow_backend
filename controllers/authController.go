@@ -124,3 +124,9 @@ func Logout(c *fiber.Ctx) error {
 		"message": "success",
 	})
 }
+
+func Test(c *fiber.Ctx) error {
+	return c.JSON(fiber.Map{
+		"message": "test successful",
+	})
+}
