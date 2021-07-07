@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/ahmedkrdzalic/StackAndFlow/database"
 	"github.com/ahmedkrdzalic/StackAndFlow/routes"
 	"github.com/gofiber/fiber/v2"
@@ -9,6 +11,7 @@ import (
 
 func main() {
 	database.Connect()
+	port := os.Getenv("PORT")
 
 	app := fiber.New()
 
@@ -18,5 +21,5 @@ func main() {
 
 	routes.Setup(app)
 
-	app.Listen(":8000")
+	app.Listen(":" + port)
 }
