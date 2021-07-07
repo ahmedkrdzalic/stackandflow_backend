@@ -13,6 +13,10 @@ func main() {
 	database.Connect()
 	port := os.Getenv("PORT")
 
+	if port == "" {
+		port = "5000"
+	}
+
 	app := fiber.New()
 
 	app.Use(cors.New(cors.Config{
