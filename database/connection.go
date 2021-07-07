@@ -9,7 +9,7 @@ import (
 var DB *gorm.DB
 
 func Connect() {
-	conn, err := gorm.Open(mysql.Open("bfe61f88e37721:eada3ec7@us-cdbr-east-04.cleardb.com"), &gorm.Config{})
+	conn, err := gorm.Open(mysql.Open("bfe61f88e37721:eada3ec7@us-cdbr-east-04.cleardb.com/heroku_1b5d7941787cbef?reconnect=true"), &gorm.Config{})
 
 	if err != nil {
 		panic("Not connected to the database.\nERROR: ----- " + err.Error() + " -----")
