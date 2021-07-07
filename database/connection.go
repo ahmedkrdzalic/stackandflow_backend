@@ -4,15 +4,12 @@ import (
 	"github.com/ahmedkrdzalic/StackAndFlow/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-
-	"os"
 )
 
 var DB *gorm.DB
 
 func Connect() {
-	db_var := os.Getenv("CLEARDB_DATABASE_URL")
-	conn, err := gorm.Open(mysql.Open(db_var), &gorm.Config{})
+	conn, err := gorm.Open(mysql.Open("mysql://bfe61f88e37721:eada3ec7@us-cdbr-east-04.cleardb.com/heroku_1b5d7941787cbef?reconnect=true"), &gorm.Config{})
 
 	if err != nil {
 		panic("Not connected to the database.\nERROR: ----- " + err.Error() + " -----")
