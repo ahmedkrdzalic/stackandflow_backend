@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"os"
 
 	"github.com/ahmedkrdzalic/StackAndFlow/database"
@@ -16,6 +17,8 @@ func main() {
 	if port == "" {
 		port = "5000"
 	}
+
+	log.Printf("PORT is: " + port)
 
 	app := fiber.New()
 
